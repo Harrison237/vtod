@@ -10,7 +10,6 @@ import { Shop } from '@core/models/shop.class';
 import { Branch } from '@core/models/branch.class';
 import { User } from '@core/models/user.class';
 import { setHeadersFetch } from '@core/functions/http/headers.function';
-import { initSideBarData } from '@shared/functions/siderBarData.function';
 
 @Component({
   selector: 'app-side-bar-seller',

@@ -17,6 +17,7 @@ const routes: Routes = [
   {
     path: 'HomePage',
     canActivate: [ValidateLoginGuard],
+    canDeactivate: [],
     component: HomePageSellerComponent
   }
 ];
