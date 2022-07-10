@@ -9,8 +9,10 @@ import { userSeller } from '@core/models/uSeller.class';
 import { Shop } from '@core/models/shop.class';
 import { Branch } from '@core/models/branch.class';
 import { User } from '@core/models/user.class';
-import { setHeadersFetch } from '@core/functions/http/headers.function';
+import { setHeadersAxios, setHeadersFetch } from '@core/functions/http/headers.function';
 import axios from 'axios';
+import { registerLogOut } from '@core/functions/sellerHomePage/history.function';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-bar-seller',
@@ -23,6 +25,7 @@ export class SideBarSellerComponent implements OnInit {
   protected shopInfo: Shop = new Shop();
   protected branchInfo: Branch = new Branch();
   private uri: string = environment.baseUrl;
+  private token: string = nullToString(sessionStorage.getItem('token'));
 
   listSideBar = elementsSiderBar;
 
@@ -30,13 +33,12 @@ export class SideBarSellerComponent implements OnInit {
   @ViewChild('btn') btn!: ElementRef;
   @ViewChild('btnLogOut') btnLogOut!: ElementRef;
 
-  constructor(private classService: SideBarHomePageService, private http: HttpClient) { }
+  constructor(private classService: SideBarHomePageService, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
-    let token: string = nullToString(sessionStorage.getItem('token'));
     let userInfo = new User();
     let userSession: string = nullToString(sessionStorage.getItem('user'));
-    let headers = setHeaders(token);
+    let headers = setHeaders(this.token);
 
     // headers = headers.append('user-type', 'seller');
 
@@ -44,7 +46,7 @@ export class SideBarSellerComponent implements OnInit {
 
     this.http.get<Array<userSeller>>(this.uri+'seller/info/'+userInfo.id, { headers: headers }).subscribe(async (res) => {
       this.sellerInfo = res[0];
-      let headersFetch: HeadersInit = setHeadersFetch(token);
+      let headersFetch: HeadersInit = setHeadersFetch(this.token);
 
       try {
         const shopBranchData: [Response, Response] = await Promise.all([
@@ -84,7 +86,16 @@ export class SideBarSellerComponent implements OnInit {
     }
   }
 
-  logOut(): void {
+  async logOut(): Promise<void> {
+    let axiosHeaders = setHeadersAxios(this.token);
+
+    registerLogOut();
     
+    await axios.get(this.uri+'auth/logout', {
+      headers: axiosHeaders
+    });
+
+    sessionStorage.clear();
+    this.router.navigateByUrl('/seller/login');
   }
 }
