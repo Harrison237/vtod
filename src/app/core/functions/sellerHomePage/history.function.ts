@@ -23,7 +23,6 @@ export function registerLogInId(id: number){
     }).then((res) => {
         console.log(res);
     }).catch((err) => {
-        console.log(headers);
         console.log(err);
     })
 }

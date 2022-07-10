@@ -26,6 +26,10 @@
     transition: opacity .5s ease;
 }
 
+.home_content.unactive button {
+    cursor: default;
+}
+
 .header {
     min-height: 58px;
     border-bottom: 2px solid #d6d6d6;

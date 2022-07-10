@@ -10,6 +10,7 @@ import { Shop } from '@core/models/shop.class';
 import { Branch } from '@core/models/branch.class';
 import { User } from '@core/models/user.class';
 import { setHeadersFetch } from '@core/functions/http/headers.function';
+import axios from 'axios';
 
 @Component({
   selector: 'app-side-bar-seller',
@@ -27,6 +28,7 @@ export class SideBarSellerComponent implements OnInit {
 
   @ViewChild('sidebar') sidebar!: ElementRef;
   @ViewChild('btn') btn!: ElementRef;
+  @ViewChild('btnLogOut') btnLogOut!: ElementRef;
 
   constructor(private classService: SideBarHomePageService, private http: HttpClient) { }
 
@@ -62,6 +64,8 @@ export class SideBarSellerComponent implements OnInit {
           shop: this.shopInfo,
           branch: this.branchInfo
         });
+
+        this.btnLogOut.nativeElement.removeAttribute('disabled');
       } catch (e) {
         console.log(e);
       }
@@ -80,4 +84,7 @@ export class SideBarSellerComponent implements OnInit {
     }
   }
 
+  logOut(): void {
+    
+  }
 }

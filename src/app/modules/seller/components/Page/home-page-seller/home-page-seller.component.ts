@@ -17,8 +17,9 @@ export class HomePageSellerComponent implements OnInit, AfterViewInit {
   protected currentSeller: userSeller = new userSeller();
   protected currentShop: Shop = new Shop();
   protected currentBranch: Branch = new Branch();
+  protected btnArray!: Array<HTMLElement>;
 
-  constructor(private classService: SideBarHomePageService) { }
+  constructor(private classService: SideBarHomePageService, private el: ElementRef) { }
 
   @ViewChild('homeContent') homeContent!: ElementRef;
   @ViewChild('chart') chart!: ElementRef;
@@ -34,8 +35,16 @@ export class HomePageSellerComponent implements OnInit, AfterViewInit {
   
       if (res.message === 'active') {
         this.homeContent.nativeElement.classList.replace('active', 'unactive');
+
+        for (const button of this.btnArray) {
+          button.setAttribute('disabled', '');
+        }
       } else if (res.message === 'unactive') {
         this.homeContent.nativeElement.classList.replace('unactive', 'active');
+
+        for (const button of this.btnArray) {
+          button.removeAttribute('disabled');
+        }
       } else {
         if (res.message === 'all data') {
           this.currentUser = res.user;
@@ -48,6 +57,8 @@ export class HomePageSellerComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.btnArray = this.el.nativeElement.getElementsByClassName('seller-btn');
+
     placeChart(this.chart);
   }
 }

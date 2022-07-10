@@ -247,3 +247,7 @@
     cursor: pointer;
     border: solid transparent;
 }
+
+.perfil button:disabled {
+    cursor: default;
+}

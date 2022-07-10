@@ -24,7 +24,9 @@
                     <div class="cargo">Vendedor</div>
                 </div>
             </div>
-            <button class='bx bx-log-out' id="log_out" type="submit" name="btnLogout"></button>
+            <button #btnLogOut class='bx bx-log-out' id="log_out" type="submit" name="btnLogout" disabled
+                (click)="logOut()"
+            ></button>
         </div>
     </div>
 </div>
