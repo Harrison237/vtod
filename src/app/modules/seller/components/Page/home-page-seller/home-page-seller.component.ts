@@ -1,13 +1,10 @@
-import { formatDate } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { placeChart } from '@core/functions/sellerHomePage/chart.function';
-import { getMonthArray, initData, nameOfMonth } from '@core/functions/sellerHomePage/dates.function';
 import { Branch } from '@core/models/branch.class';
 import { Shop } from '@core/models/shop.class';
 import { userSeller } from '@core/models/uSeller.class';
 import { User } from '@core/models/user.class';
 import { SideBarHomePageService } from '@shared/services/side-bar-home-page.service';
-import { Chart, ChartItem, registerables } from 'chart.js';
 
 @Component({
   selector: 'app-home-page-seller',
@@ -46,8 +43,6 @@ export class HomePageSellerComponent implements OnInit, AfterViewInit {
           this.currentShop = res.shop;
           this.currentBranch = res.branch;
         }
-  
-        console.log(res);
       }
     });
   }

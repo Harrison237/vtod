@@ -6,6 +6,7 @@ import { Router, UrlTree } from '@angular/router';
 import { changeViewError, getSellerInfo } from '@core/functions/sellerLogin/errors.function';
 import { Seller } from '@core/models/seller.interface';
 import { User } from '@core/models/user.class';
+import { registerLogInId } from '@core/functions/sellerHomePage/history.function';
 
 @Component({
   selector: 'seller-login-form',
@@ -109,6 +110,10 @@ export class SellerLoginFormComponent implements OnInit, AfterViewInit {
           } else if (seller) {
             sessionStorage.setItem('token', token);
             sessionStorage.setItem('user', JSON.stringify(currentUser));
+
+            let userId: number = currentUser.id;
+
+            registerLogInId(userId);
 
             this.router.navigateByUrl('/seller/HomePage');
           }

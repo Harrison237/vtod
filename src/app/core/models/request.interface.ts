@@ -1,5 +1,5 @@
 export interface IRequest{ 
-    id: number;
+    id?: number;
     created_at?: string;
     uptated_at?: string;
 }

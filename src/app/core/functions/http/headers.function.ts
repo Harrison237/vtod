@@ -6,3 +6,10 @@ export function setHeadersFetch(token: string): HeadersInit{
         'Authorization': 'Bearer'+token
     }
 }
+
+export function setHeadersAxios(token: string): {} {
+
+    return {
+        'Authorization': 'Bearer'+token
+    }
+}
