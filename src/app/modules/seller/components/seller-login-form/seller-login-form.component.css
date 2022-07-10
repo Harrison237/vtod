@@ -1,0 +1,176 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-weight: 300;
+}
+
+.form {
+    width: 22.5rem;
+    display: block;
+}
+
+.avatar {
+    display: block;
+    margin: 0 auto 0 auto;
+    width: 100px;
+    margin-bottom: 1em;
+}
+
+.i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-form-bolder);
+}
+
+.input-container >  h5 {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-form-bolder);
+    font-size: 1.125rem;
+    transition: .3s;
+    font-family: var(--font-family);
+    font-weight: 300;
+}
+
+.input-div{
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin-bottom: 1.7em;
+    padding: 5px 0;
+    border-bottom: 2px solid var(--color-form);
+    background-color: none;
+}
+
+.input-div > div {
+    position: relative;
+    height: 45px;
+}
+
+.input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.2rem;
+    font-family: 'Libre Franklin', sans-serif;
+    color: #555;
+    font-weight: 300;
+}
+
+.input-div:after, .input-div:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #F78A0C;
+    transition: .3s;
+}
+
+.input-div:after {
+    right: 50%;
+}
+
+.input-div:before {
+    left: 50%;
+}
+
+.input-div.focus .i i{
+    color: #F78A0C;
+}
+
+.input-div.focus div h5 {
+    top: -5px;
+    font-size: 15px;
+}
+
+.input-div.focus:after, .input-div.focus:before {
+    width: 50%;
+}
+
+a{
+    font-family: var(--font-family);
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: #999;
+    font-size: 0.9rem;
+    transition: .3s;
+}
+
+a:hover {
+    color: #F78A0C;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #F6A444, var(--main-color), #F6A444);
+    cursor: pointer;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Libre Franklin', sans-serif;
+    background-size: 200%;
+    transition: all .5s;
+}
+
+.btn:hover {
+    background-position: right;
+}
+
+.btn.btn-disabled {
+    background-image: linear-gradient(to right, #333, rgb(86, 86, 86), rgb(97, 97, 97));
+    cursor: default;
+}
+
+.error:after, .error:before{
+    background-color: red;
+    border-bottom: 3px solid red;
+}
+
+.input-div.focus.error .i i{
+    color: red;
+}
+
+.error-text.disabled, .error-field.disabled {
+    opacity: 0;
+    transition: all .5s;
+}
+
+.error-text {
+    position: absolute;
+    opacity: 1;
+    top: 55px;
+    left: -20px;
+    color: red;
+    font-family: var(--font-family);
+    font-size: .8rem;
+    transition: all .5s;
+}
+
+.error-field {
+    color: red;
+    font-family: var(--font-family);
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+    transition: all .5s;
+    font-weight: bold;
+}

@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background: #d35400;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.sidebar.active {
+    width: 240px;
+}
+
+.sidebar .logo_cont {
+    border-bottom: solid 2px white;
+}
+
+.sidebar .logo_cont .logo {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 100%;
+    align-items: flex-start;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active .logo_cont .logo {
+    opacity: 1;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.logo_cont .logo i{
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.logo_cont .logo .nombre_logo {
+    font-size: 17px;
+    font-weight: 450;
+    text-align: left;
+}
+
+.logo_cont .logo .desc_logo {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.logo_cont .logo img {
+    width: 40px;
+}
+
+.sidebar #btn {
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn {
+    left: 90%;
+}
+
+.sidebar ul {
+    margin-top: 20px;
+
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translate(-50%,-50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #fff;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+.sidebar ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+
+.sidebar ul li button {
+    width: 50px;
+    height: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar.active ul li button {
+    width: 212px;
+}
+
+.sidebar ul li button span{
+    font-size: 16px;
+}
+
+.sidebar ul li button:hover {
+    color: #d35400;
+    background: #f9ca24;
+}
+
+.sidebar ul li i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sidebar .nombre_link{ 
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .nombre_link{ 
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .perfil_cont {
+    position: absolute;
+    color: white;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar .perfil_cont .perfil {
+    justify-content: center;
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: #e6620b;
+    transition: all 0.4s ease;
+}
+
+.sidebar.active .perfil_cont .perfil {
+    background: #e6620b;
+}
+
+.sidebar .perfil_cont .perfil .detalles_perfil {
+    display: flex;
+    opacity: 0;
+    align-items: center;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.sidebar.active .perfil_cont .perfil .detalles_perfil {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.perfil .detalles_perfil img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.perfil .detalles_perfil .nombre_cargo {
+    margin-left: 10px;
+}
+
+.perfil .detalles_perfil .nombre {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.perfil .detalles_perfil .cargo {
+    font-size: 12px;
+}
+
+.perfil #log_out {
+    color: white;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 45px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    background: #e6620b;
+    overflow: hidden;
+}
+
+.sidebar.active .perfil #log_out {
+    left: 88%;
+    background: none;
+}
+
+.perfil button {
+    cursor: pointer;
+    border: solid transparent;
+}

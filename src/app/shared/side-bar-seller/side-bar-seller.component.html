@@ -1,0 +1,30 @@
+<div class="sidebar unactive" #sidebar>
+    <div class="logo_cont">
+        <div class="logo">
+            <div class="nombre_logo">{{shopInfo.name}}</div>
+            <div class="desc_logo">{{branchInfo.name}}</div>
+        </div>
+        <i class="bx bx-menu" #btn id="btn" (click)="btnFunction()"></i>
+    </div>
+    <ul class="lista_nav">
+        <li *ngFor="let data of listSideBar">
+            <button type="submit" id="{{data.buttonID}}">
+                <i class="{{data.iClass}}"></i>
+                <span class="nombre_link">{{data.spanValue}}</span>
+            </button>
+            <span class="tooltip">{{data.spanValue}}</span>
+        </li>
+    </ul>
+    <div class="perfil_cont">
+        <div class="perfil">
+            <div class="detalles_perfil">
+                <img src="../../../assets/img/undraw_male_avatar_323b.svg">
+                <div class="nombre_cargo">
+                    <div class="nombre">{{sellerInfo.name}} {{sellerInfo.lastname}}</div>
+                    <div class="cargo">Vendedor</div>
+                </div>
+            </div>
+            <button class='bx bx-log-out' id="log_out" type="submit" name="btnLogout"></button>
+        </div>
+    </div>
+</div>

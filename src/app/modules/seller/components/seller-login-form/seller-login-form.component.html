@@ -1,0 +1,35 @@
+<div class="login-container">
+    <form class="form" [formGroup]="mainForm">
+        <img src="../../../../../assets/img/undraw_takeout_boxes_ap54.svg" class="avatar">
+        <h2 class="h2">Panel de Vendedores</h2>
+        <div class="input-div">
+            <div class="i">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="input-container">
+                <h5>Username</h5>
+                <input #username type="text" class="input" (focus)="focusFunction('user')"
+                (blur)="blurFunction('user')" formControlName ="userNameControl">
+                <p #pErrorUser class="error-text disabled">Usuario de 8 a 30 carácteres</p>
+            </div>
+        </div>
+        <div class="input-div">
+            <div class="i">
+                <i class="fas fa-lock"></i>
+            </div>
+            <div class="input-container">
+                <h5>Password</h5>
+                <input #password type="password" class="input" (focus)="focusFunction('password')"
+                (blur)="blurFunction('password')" formControlName="passwordControl">
+                <p #pErrorPassword class="error-text disabled">Contraseña de 5 a 10 carácteres</p>
+            </div>
+        </div>
+        <a href="HomePage.html" class="admin">Contacte al administrador</a>
+        <button #btnInput class="btn" id="btnLogin" type="submit" name="loginVendedor"
+                (click)="requestHomePage()"
+        >Ingresar</button>
+        <div class="error-field disabled" #errorField>
+            asdasd
+        </div>
+    </form>
+</div>

@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --main-color: #F7630C;
+    --font-family: 'Libre Franklin', sans-serif;
+    --color-form: #d9d9d9;
+    --color-title: #333;
+    --color-form-bolder: #999;
+}
+
+*, *:after, *:before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    max-width: 100vw;
+    font-family: var(--font-family);
+    font-weight: 300;
+}
+
+.h2 {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 2.9rem;
+    text-transform: uppercase;
+    color: var(--color-title);
+    font-family: var(--font-family);
+    font-weight: 500;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.logo-login {
+    width: 350px;
+}

@@ -1,0 +1,70 @@
+<app-side-bar-seller></app-side-bar-seller>
+<div class="home_content active" #homeContent>
+    <div class="header">
+        <div class="notifications">
+            <i class="bx bxs-bell"></i>
+        </div>
+
+        <a routerLink="/seller/HomePage" class="logo">
+            <div class="txt-logo">
+                Virtual Trade on Data
+            </div>
+            <div class="img-logo">
+                <img src="../../../../../../assets/img/VirtualTrade.png">
+            </div>
+        </a>
+    </div>
+
+    <div class="user-products">
+        <div class="user-info">
+            <div class="text-user-info">
+                <div class="info-title">
+                    Información de usuario
+                </div>
+                <div class="info-fields">
+                    <p>{{currentUser.email}}</p>
+                    <p>{{currentSeller.name}} {{currentSeller.lastname}}</p>
+                    <p>{{currentBranch.name}}</p>
+                    <p>{{currentBranch.address}}</p>
+                </div>
+            </div>
+            <div class="user-profile">
+                <img src="../../../../../../assets/img/undraw_male_avatar_323b.svg" alt="">
+                <button class="btn-edit">Editar</button>
+            </div>
+        </div>
+        <div class="product-info">
+            <img src="../../../../../../assets/img/png-transparent-shoe-sneakers-nike-mercurial-vapor-tennis-women-shoes-orange-outdoor-shoe-sneakers-removebg-preview-removebg-preview.png" alt="">
+            <button class="btn-products">Productos</button>
+        </div>
+    </div>
+
+    <div class="recent-sells">
+        <h2>Ventas Recientes</h2>
+
+        <div class="sells">
+            <div class="sell-card">
+                
+            </div>
+            <div class="sell-card">
+
+            </div>
+            <div class="sell-card">
+
+            </div>
+            <div class="sell-card">
+
+            </div>
+            <div class="sell-card">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-container">
+        <h2>Estadísticas Mensuales</h2>
+        <canvas #chart id="chart" class="chart">
+
+        </canvas>
+    </div>
+</div>
