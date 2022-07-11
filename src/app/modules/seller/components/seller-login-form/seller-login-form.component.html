@@ -24,7 +24,7 @@
                 <p #pErrorPassword class="error-text disabled">Contraseña de 5 a 10 carácteres</p>
             </div>
         </div>
-        <a href="HomePage.html" class="admin">Contacte al administrador</a>
+        <a (click)="buttonsRedirect()" class="admin">Contacte al administrador</a>
         <button #btnInput class="btn" id="btnLogin" type="submit" name="loginVendedor"
                 (click)="requestHomePage()"
         >Ingresar</button>

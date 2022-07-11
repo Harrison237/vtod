@@ -8,7 +8,7 @@
     </div>
     <ul class="lista_nav">
         <li *ngFor="let data of listSideBar">
-            <button type="submit" id="{{data.buttonID}}">
+            <button (click)="buttonsRedirect()" type="submit" id="{{data.buttonID}}">
                 <i class="{{data.iClass}}"></i>
                 <span class="nombre_link">{{data.spanValue}}</span>
             </button>

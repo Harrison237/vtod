@@ -133,4 +133,8 @@ export class SellerLoginFormComponent implements OnInit, AfterViewInit {
       }); 
     }
   }
+
+  buttonsRedirect() {
+    this.router.navigateByUrl('/seller/Products');
+  }
 }

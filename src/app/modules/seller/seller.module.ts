@@ -6,16 +6,21 @@ import { SellerLoginFormComponent } from './components/seller-login-form/seller-
 import { SellerLoginPageComponent } from './components/seller-login-page/seller-login-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageSellerComponent } from './components/Page/home-page-seller/home-page-seller.component';
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { ValidateLoginGuard } from '@core/guards/validate-login.guard';
 import { SharedModule } from '@shared/shared.module';
+import { ProductMainPageComponent } from './components/Products/product-main-page/product-main-page.component';
+import { ProductListComponent } from './components/Products/product-list/product-list.component';
+import { SideBarSellerComponent } from '@shared/side-bar-seller/side-bar-seller.component';
 
 
 @NgModule({
   declarations: [
     SellerLoginFormComponent,
     SellerLoginPageComponent,
-    HomePageSellerComponent
+    HomePageSellerComponent,
+    ProductMainPageComponent,
+    ProductListComponent
   ],
   imports: [
     RouterModule.forChild([
